@@ -1,0 +1,2 @@
+class ServiceProfile < ApplicationRecord
+end
