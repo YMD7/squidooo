@@ -1,0 +1,6 @@
+version: '2'
+services:
+  squidooo:
+    build: .
+    volumes:
+      - .:/usr/src/watir
