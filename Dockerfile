@@ -1,19 +1,8 @@
-FROM ymd7/centos7-ruby:2.4.1
+FROM ymd7/centos7-watir:latest
 
 ENV APP_ROOT /usr/src/app
 
 WORKDIR $APP_ROOT
-
-RUN \
-  yum -y update && yum -y install wget
-RUN \
-  wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
-  tar xf phantomjs-2.1.1-linux-x86_64.tar.bz2
-RUN \
-  mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/ && \
-  rm -rf phantomjs-2.1.1-linux-x86_64*
-RUN \
-  yum -y install fontconfig-devel && phantomjs -v
 
 RUN \
   yum -y install epel-release
