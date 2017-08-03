@@ -1,6 +1,4 @@
 class BrowseService
-  attr_reader :user, :pref, :city, :dest, :browser
-
   def initialize(user, pref, city, dest)
     @user = user
     @pref = pref
@@ -12,10 +10,13 @@ class BrowseService
   end
 
   def login
-    "LoginServices::#{@pref}#{@city}CityService".constantize.new(self)
+    "LoginServices::#{@pref}#{@city}CityService".constantize.new(@user, @pref, @city, @dest, @browser)
+    @browser
   end
 
   private
+
+  attr_reader :user, :pref, :city, :dest, :browser
 
   def url
     ServiceProfile.find_by(pref: pref, city: city).url
