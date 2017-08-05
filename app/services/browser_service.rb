@@ -1,4 +1,4 @@
-class BrowseService
+class BrowserService
   def initialize(user, pref, city, dest)
     @user = user
     @pref = pref
@@ -10,7 +10,7 @@ class BrowseService
   end
 
   def login
-    "LoginServices::#{@pref}#{@city}CityService".constantize.new(@user, @pref, @city, @dest, @browser)
+    "PlatformServices::#{@pref}#{@city}CityServices::LoginService".constantize.new(@user, @pref, @city, @dest, @browser)
     @browser
   end
 
