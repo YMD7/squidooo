@@ -1,10 +1,11 @@
 FROM ymd7/centos7-watir:latest
 
-ENV APP_ROOT /usr/src/app
+ENV APP_ROOT /usr/src/squidooo
 
 WORKDIR $APP_ROOT
 
 RUN \
+  yum -y update && \
   yum -y install epel-release
 RUN \
   yum -y install nodejs sqlite-devel && \

@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/usr/src/app
+      - .:/usr/src/squidooo
     stdin_open: true
     tty: true
     ports:

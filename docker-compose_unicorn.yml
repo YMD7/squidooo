@@ -17,12 +17,12 @@ services:
   app:
     build: .
     volumes:
-      - .:/usr/src/app
+      - .:/usr/src/squidooo
     volumes_from:
       - data
       - bundle
   bundle:
     image: busybox
     volumes:
-      - /usr/src/app/vendor/bundle
+      - /usr/src/squidoo/vendor/bundle
 
