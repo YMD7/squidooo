@@ -7,6 +7,21 @@ class CaptureLotteryResultService
 
   def capture
     @browser = BrowserService.new(@user, @pref, @city, "confirm_results").login
-    @json = "PlatformServices::#{@pref}#{@city}CityServices::ResultCaptureService".constantize.new(@browser).get
+    @result  = "PlatformServices::#{@pref}#{@city}CityServices::ResultCaptureService".constantize.new(@browser).get
+    put_yaml
+  end
+
+  private
+
+  def put_yaml
+    dir  = "#{Rails.root}/private/user/#{@user.id}/lottery_results"
+    FileUtils.mkdir_p(dir) unless FileTest.exist?(dir)
+    path = "#{dir}/#{@result.keys[0].to_s}.yml"
+
+    File.open(path,"w") do |f|
+      f.puts(JSON.parse(@result.to_json).to_yaml)
+    end
+    puts "Created a YAML file \"#{path}\""
+    path
   end
 end

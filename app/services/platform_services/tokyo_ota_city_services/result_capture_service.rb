@@ -10,7 +10,7 @@ module PlatformServices
         @rows   = get_rows
         @header = get_header
 
-        key = Time.current.strftime('%Y-%m')
+        key = Time.current.strftime('%Y%m')
         hash = { key => [] }
         regi_no, head_row = "", false
 
