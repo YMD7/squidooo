@@ -14,7 +14,7 @@ class CaptureLotteryResultService
   private
 
   def put_yaml
-    dir  = "#{Rails.root}/private/user/#{@user.id}/lottery_results"
+    dir  = "#{Rails.root}/private/user/#{@user.id}/#{@pref}#{@city}City/lottery_results"
     FileUtils.mkdir_p(dir) unless FileTest.exist?(dir)
     path = "#{dir}/#{@result.keys[0].to_s}.yml"
 
