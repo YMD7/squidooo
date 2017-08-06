@@ -7,7 +7,7 @@ class CaptureLotteryResultService
 
   def capture
     @browser = BrowserService.new(@user, @pref, @city, "confirm_results").login
-    @result  = "PlatformServices::#{@pref}#{@city}CityServices::ResultCaptureService".constantize.new(@browser).get
+    @result  = "PlatformServices::#{@pref}#{@city}CityServices::CaptureResultService".constantize.new(@browser).get_result
     put_yaml
   end
 

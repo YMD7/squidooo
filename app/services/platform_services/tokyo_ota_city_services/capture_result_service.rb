@@ -1,12 +1,12 @@
 module PlatformServices
   module TokyoOtaCityServices
-    class ResultCaptureService
+    class CaptureResultService
       def initialize(browser)
         @browser = browser
         @html    = Nokogiri::HTML.parse(@browser.html)
       end
 
-      def get
+      def get_result
         @rows   = get_rows
         @header = get_header
 
