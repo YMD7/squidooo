@@ -2,12 +2,25 @@ doctype html
 html
   head
     title
-      | App
+      | Squidooo
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     p.notice = notice
     p.alert  = alert
-
+    - if user_signed_in?
+      ul
+        li
+          = link_to current_user.email, pages_show_path
+        li
+          = link_to 'プロフィール変更', edit_user_registration_path
+        li
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete
+    - else
+      ul
+        li
+          = link_to 'サインアップ', new_user_registration_path
+        li
+          = link_to 'ログイン', new_user_session_path
     = yield
