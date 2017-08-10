@@ -69,6 +69,7 @@ gem 'omniauth-facebook'
 gem 'slim'
 gem 'bourbon'
 gem 'font-awesome-sass'
+gem 'dotenv-rails'
 
 group :development do
   gem 'html2slim'
