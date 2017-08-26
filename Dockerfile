@@ -7,6 +7,14 @@ WORKDIR $APP_ROOT
 RUN \
   yum -y update && \
   yum -y install epel-release
+
+###
+#  CentOS 7.4 がリリースされるまでの
+#  nodejs に必要な http-parser の問題回避
+###
+RUN \
+  rpm -ivh https://kojipkgs.fedoraproject.org//packages/http-parser/2.7.1/3.el7/x86_64/http-parser-2.7.1-3.el7.x86_64.rpm
+
 RUN \
   yum -y install nodejs sqlite-devel && \
   yum -y install libjpeg-devel libpng-devel && \
