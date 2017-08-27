@@ -1,0 +1,51 @@
+// ==========================================================================
+//
+//  ++ login ++
+//
+// ==========================================================================
+
+// background
+
+.lgn-Background {
+  position: fixed;
+  box-sizing: border-box;
+  border: 8px solid #000000;
+  background-color: #4B72B0;
+  width: 100vw;
+  height: 100vh;
+}
+.lgn-Background::before {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background-image: image-url(pages/login/lines);
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+// logo
+
+.lgn-Logo {
+  padding-top: 24px - 8px;
+}
+.lgn-Logo__image {
+  position: relative;
+  left: -8px;
+  width: 100vw;
+}
+
+// SNS Login
+
+.lgn-SNSLogin__Twitter_Button {
+  display: block;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  height: 57px;
+  width: 235px;
+  border: 1px solid #c0e8f7;
+  border-radius: 7px;
+  box-shadow: 6.5px 6.5px 0 0 #000000, 0 0 0 2px #fff inset, 0 0 0 4.3px #8CD1EA inset;
+}

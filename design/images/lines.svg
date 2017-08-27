@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="375px" height="546px" viewBox="0 0 375 546" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>lines</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="375" height="647"></rect>
+    </defs>
+    <g id="SP" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Login" transform="translate(0.000000, -20.000000)">
+            <g id="main" transform="translate(0.000000, 20.000000)">
+                <g id="lines">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="bounds"></g>
+                    <path d="M376,165 L-1,531" id="Line-bottom" stroke="#FFFFFF" stroke-width="22" stroke-linecap="square" mask="url(#mask-2)"></path>
+                    <path d="M376,-64 L-1,302" id="Line-top" stroke="#FFFFFF" stroke-width="22" stroke-linecap="square" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
