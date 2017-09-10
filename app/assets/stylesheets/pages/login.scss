@@ -6,7 +6,7 @@
 
 // background
 
-.lgn-Background {
+.lg-Background {
   position: fixed;
   box-sizing: border-box;
   border: 8px solid #000000;
@@ -14,7 +14,7 @@
   width: 100vw;
   height: 100vh;
 }
-.lgn-Background::before {
+.lg-Background::before {
   content: '';
   position: fixed;
   z-index: -1;
@@ -22,16 +22,17 @@
   left: 0;
   background-image: image-url(pages/login/lines);
   background-repeat: no-repeat;
+  background-position: 0 -80px;
   width: 100vw;
   height: 100vh;
 }
 
 // logo
 
-.lgn-Logo {
+.lg-Logo {
   padding-top: 24px - 8px;
 }
-.lgn-Logo__image {
+.lg-Logo__image {
   position: relative;
   left: -8px;
   width: 100vw;
@@ -39,7 +40,7 @@
 
 // SNS Login
 
-.lgn-SNSLogin__Twitter_Button {
+.lg-SNSLogin__Twitter_Button {
   display: block;
   box-sizing: border-box;
   background-color: #FFFFFF;
