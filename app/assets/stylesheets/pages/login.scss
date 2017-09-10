@@ -41,6 +41,7 @@
 // SNS Login
 
 .lg-SNSLogin__Twitter_Button {
+  position: relative;
   display: block;
   box-sizing: border-box;
   background-color: #FFFFFF;
@@ -49,4 +50,8 @@
   border: 1px solid #c0e8f7;
   border-radius: 7px;
   box-shadow: 6.5px 6.5px 0 0 #000000, 0 0 0 2px #fff inset, 0 0 0 4.3px #8CD1EA inset;
+}
+.lg-SNSLogin__Twitter_Icon {
+  position: absolute;
+  width: 20px;
 }
