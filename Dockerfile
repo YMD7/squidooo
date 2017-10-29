@@ -41,4 +41,4 @@ RUN \
 COPY . $APP_ROOT
 
 EXPOSE 4000
-CMD ["rails", "server", "-b", "0.0.0.0", "-p", "4000"]
+CMD ["foreman", "start", "-f", "frontend/Procfile"]
