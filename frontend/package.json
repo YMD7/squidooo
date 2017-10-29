@@ -17,5 +17,8 @@
     "babel-preset-react-hmre": "^1.1.1",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development webpack-dev-server --config config/webpack.config.dev.js --progress --colors --inline --hot"
   }
 }
