@@ -15,8 +15,15 @@ RUN \
 RUN \
   rpm -ivh https://kojipkgs.fedoraproject.org//packages/http-parser/2.7.1/3.el7/x86_64/http-parser-2.7.1-3.el7.x86_64.rpm
 
+###
+#  Add RPM package repository for Yarn
+###
+RUN \
+  wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
+
 RUN \
   yum -y install nodejs sqlite-devel && \
+  yum -y install yarn && \
   yum -y install libjpeg-devel libpng-devel && \
   yum -y install ImageMagick ImageMagick-devel
 
