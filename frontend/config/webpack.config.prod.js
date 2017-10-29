@@ -33,11 +33,8 @@ module.exports = {
     }),
     new UglifyJSPlugin({
       sourceMap: true,
-      compress: {
-        warnings: false,
-      },
     }),
-    // new ManifestPlugin(),
-    // new ExtractTextPlugin('[name]-[hash].css', { allChunks: true }),
+    new ManifestPlugin(),
+    new ExtractTextPlugin('[name]-[hash].css', { allChunks: true }),
   ],
 };
