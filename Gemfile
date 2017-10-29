@@ -70,7 +70,6 @@ gem 'slim'
 gem 'bourbon'
 gem 'font-awesome-sass'
 gem 'dotenv-rails'
-gem 'foreman'
 
 group :development do
   gem 'html2slim'
