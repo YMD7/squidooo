@@ -23,6 +23,7 @@
     "webpack-manifest-plugin": "^1.3.2"
   },
   "scripts": {
+    "build": "NODE_ENV=production webpack --config config/webpack.config.prod.js --progress --colors",
     "dev": "NODE_ENV=development webpack-dev-server --config config/webpack.config.dev.js --progress --colors --inline --hot"
   }
 }
