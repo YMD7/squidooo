@@ -54,5 +54,8 @@ module.exports = {
   ],
   devServer: {
     contentBase: 'public/dist',
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
   },
 };
