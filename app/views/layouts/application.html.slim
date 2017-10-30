@@ -10,7 +10,7 @@ html
       | Squidooo
 
     = csrf_meta_tags
-    /= stylesheet_link_tag assets_path('bundle.css')
+    = css_load_tag('style')
     = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Nunito'
   body
     p.notice = notice
