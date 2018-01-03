@@ -6,7 +6,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    bundle: './javascripts/app.js',
+    bundle: './entry/app.js',
+    style:  './entry/app.scss',
   },
   output: {
     path: __dirname + './../../public/dist',
@@ -22,6 +23,26 @@ module.exports = {
             presets: ['es2015', 'es2016', 'stage-1', 'react'],
           },
         },
+      }, {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          use: [{
+            loader: 'css-loader',
+            options: {
+              minimize: true,
+              sourceMap: true,
+            },
+          }, {
+            loader: 'postcss-loader',
+            options: {
+              plugins: (loader) => [
+                require('autoprefixer')(),
+              ],
+            },
+          }, {
+            loader: 'sass-loader',
+          }],
+        }),
       },
     ],
   },

@@ -3,7 +3,8 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    bundle: './javascripts/app.js',
+    bundle: './entry/app.js',
+    style:  './entry/app.scss',
   },
   output: {
     path: __dirname + '../public/dist',
@@ -25,6 +26,22 @@ module.exports = {
             },
           },
         },
+      }, {
+        test: /\.scss$/,
+        use: [{
+          loader: 'style-loader',
+        }, {
+          loader: 'css-loader',
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            plugins: (loader) => [
+              require('autoprefixer')(),
+            ],
+          },
+        }, {
+          loader: 'sass-loader',
+        }],
       },
     ],
   },
@@ -37,5 +54,8 @@ module.exports = {
   ],
   devServer: {
     contentBase: 'public/dist',
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
   },
 };
