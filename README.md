@@ -1,24 +1,22 @@
-# README
+# squidooo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> My wonderful Nuxt.js project
 
-Things you may want to cover:
+## Build Setup
 
-* Ruby version
+``` bash
+# install dependencies
+$ yarn install
 
-* System dependencies
+# serve with hot reload at localhost:3000
+$ yarn run dev
 
-* Configuration
+# build for production and launch server
+$ yarn run build
+$ yarn start
 
-* Database creation
+# generate static project
+$ yarn run generate
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
