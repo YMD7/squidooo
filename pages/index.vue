@@ -1,5 +1,9 @@
 <template>
   <section class="container">
+    <div id="firebaseui-auth-container" />
+    <div id="loader">
+      Loading...
+    </div>
     <div>
       <logo />
       <h1 class="title">
@@ -26,10 +30,34 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import firebase from '~/plugins/firebase'
+
+const uiConfig = {
+  callbacks: {
+    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+      return true
+    },
+    uiShown: () => {
+      document.getElementById('loader').style.display = 'none'
+    }
+  },
+  signInFlow: 'popup',
+  signInSuccessUrl: 'http://localhost:3000/success',
+  signInOptions: [
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    firebase.auth.TwitterAuthProvider.PROVIDER_ID
+  ]
+}
 
 export default {
   components: {
     Logo
+  },
+  mounted() {
+    const firebaseui = require('firebaseui')
+    const ui = new firebaseui.auth.AuthUI(firebase.auth())
+    ui.start('#firebaseui-auth-container', uiConfig)
   }
 }
 </script>
