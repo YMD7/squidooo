@@ -4,6 +4,18 @@ module.exports = {
   mode: 'universal',
 
   /*
+   * Env
+  */
+  env: {
+    FIREBASE_APIKEY: 'AIzaSyCxTvSWS2jFilzgEp_RRuNzaM64RDN97oQ',
+    FIREBASE_AUTHDOMAIN: 'squidooo.firebaseapp.com',
+    FIREBASE_DATABASEURL: 'https://squidooo.firebaseio.com',
+    FIREBASE_PROJECTID: 'squidooo',
+    FIREBASE_STORAGEBUCKET: 'squidooo.appspot.com',
+    FIREBASE_MESSAGINGSENDERID: '961487923835'
+  },
+
+  /*
   ** Headers of the page
   */
   head: {
