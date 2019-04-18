@@ -3,14 +3,18 @@ section.container
   header
     h1
       Logo
+  section.signin
+    Signin
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import Signin from '~/components/Signin.vue'
 
 export default {
   components: {
-    Logo: Logo
+    Logo: Logo,
+    Signin: Signin
   }
 }
 </script>
@@ -22,8 +26,8 @@ export default {
   background-image url('~assets/images/ObliqueLines.svg')
   height 100vh
 header
-  position absolute
-  left 0
+  position relative
+  left -8px
   width 100vw
 .logo
   width 100%
