@@ -49,13 +49,22 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    // for global sass/stylus settings
+    '@nuxtjs/style-resources'
   ],
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  /*
+   ** Style Resources configuration
+  */
+  styleResources: {
+    stylus: ['~assets/stylesheets/*.styl']
   },
 
   /*
