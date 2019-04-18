@@ -1,13 +1,19 @@
 <template lang="pug">
-  section.container
-    h1 Squidooo
-  </section>
+section.container
+  header
+    h1
+      Logo
 </template>
 
 <script>
+import Logo from '~/components/Logo.vue'
+
+export default {
+  components: {
+    Logo: Logo
+  }
+}
 </script>
 
-<style lang="stylus">
-  h1
-    font-size 2.0rem
+<style scoped lang="stylus">
 </style>
