@@ -1,5 +1,6 @@
-<template>
-  <section class="container">
+<template lang="pug">
+  section.container
+    h1 Squidooo
   </section>
 </template>
 
