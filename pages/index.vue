@@ -16,4 +16,7 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+.container
+  background-color sq-blue
+  background-image url('~assets/images/ObliqueLines.svg')
 </style>
