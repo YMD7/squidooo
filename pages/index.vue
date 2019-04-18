@@ -7,5 +7,7 @@
 <script>
 </script>
 
-<style>
+<style lang="stylus">
+  h1
+    font-size 2.0rem
 </style>
