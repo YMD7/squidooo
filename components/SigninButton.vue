@@ -5,7 +5,7 @@ button
   .text(:class="sns")
     | {{ sns }}
     span.small
-      | &nbsp;でログイン
+      | でログイン
 </template>
 
 <script>
@@ -58,4 +58,5 @@ button
 
 .small
   font-size 0.88rem
+  text-indent 0.25rem
 </style>
