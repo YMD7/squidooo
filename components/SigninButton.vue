@@ -2,6 +2,10 @@
 button
   .icon
     SNSIcon(:sns="sns")
+  .text
+    | {{ sns }}
+    span.small
+      |  でログイン
 </template>
 
 <script>
@@ -19,3 +23,11 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="stylus">
+.text
+  font-size 0.95rem
+
+.small
+  font-size 0.88rem
+</style>

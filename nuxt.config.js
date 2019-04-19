@@ -36,7 +36,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [],
+  css: ['~/assets/stylesheets/default.styl'],
 
   /*
   ** Plugins to load before mounting the App
@@ -64,7 +64,7 @@ module.exports = {
    ** Style Resources configuration
   */
   styleResources: {
-    stylus: ['~assets/stylesheets/*.styl']
+    stylus: ['~assets/stylesheets/variables.styl']
   },
 
   /*
