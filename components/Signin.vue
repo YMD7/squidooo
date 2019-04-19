@@ -18,3 +18,12 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="stylus">
+ul
+  display flex
+  flex-direction column
+
+li
+  margin-bottom 14px
+</style>
