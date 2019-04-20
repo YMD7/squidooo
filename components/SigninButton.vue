@@ -33,6 +33,13 @@ button
   box-shadow 5px 7px #000000
   width 242px
   height 65px
+  &:active
+    position relative
+    top 4px
+    left 4px
+    border 6px solid sq-yellow
+    background-color sq-yellow
+    box-shadow 1px 3px #000000
 
 .icon
   display flex
