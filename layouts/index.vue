@@ -1,6 +1,6 @@
 <template lang="pug">
 .container
-  Header
+  Header(page="index")
   nuxt
   Footer
 </template>
