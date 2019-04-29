@@ -114,7 +114,7 @@ time
   box-shadow 1px 1px #000000
   padding 10px 24px
   color #FFFFFF
-  font-family YuGothic, Meiryo
+  font-family "Yu Gothic", YuGothic, Meiryo
   font-size 0.80rem
 
 .calendar-table
@@ -145,17 +145,17 @@ time
     padding 12px
 
 .holiday
-  color #A3ABA2
+  color calendar-holiday
 
 .current
   background url('~assets/images/CalendarEllipse.svg') no-repeat center center
   background-size 70%
 
 .apply
-  background-color #D4E5D1
+  background-color calendar-apply
 
 .comfirm
-  background-color #E1E1B0
+  background-color calendar-comfirm
 
 .field
   border-bottom-left-radius 10px
@@ -205,7 +205,7 @@ time
   margin 0.10rem
 
 .strong
-  color #FF4D52
+  color sq-red
 
 .button
   display flex
