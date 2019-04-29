@@ -33,7 +33,7 @@ section
               p
                 | あと
                 span.number.strong
-                  | 4
+                  | 9999
                 | 件の申込が可能です
             .button
               button
@@ -148,7 +148,7 @@ time
   flex-direction column
   box-shadow 5px 7px #000000
   margin-right 4px
-  font-size 0.96rem
+  font-size 1.08rem
   li
     width 14.28%
     text-align center
@@ -178,7 +178,8 @@ time
   background-size 70%
 
 .draw
-  background-color sq-red
+  background-color #000000
+  color #FFFFFF
 
 .apply
   background-color calendar-apply
@@ -250,8 +251,8 @@ button
 
 .disable
   cursor not-allowed
-  border-color #4D4F4C
-  background-color #DDDDDD
+  border-color #CCCCCC
+  background-color #CCCCCC
   box-shadow 0 0
   color #999999
 </style>
