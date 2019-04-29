@@ -6,7 +6,7 @@ section
   .calendar
     .calendar-month
       time
-        | 4月
+        | {{ month }}月
     .calendar-table
       ol.week-header
         li 月
@@ -17,31 +17,13 @@ section
         li.holiday 土
         li.holiday 日
       ol.week-dates
-        li.apply 15
-        li.apply 16
-        li.apply 17
-        li.apply 18
-        li.apply 19
-        li.apply.holiday 20
-        li.apply.holiday 21
-        li.apply 22
-        li.apply 23
-        li.apply 24
-        li.apply.current 25
-        li.apply 26
-        li.apply.holiday 27
-        li.apply.holiday 28
-        li.apply 29
-        li.apply 30
-        li 1
-        li.comfirm 2
-        li.comfirm 3
-        li.comfirm.holiday 4
-        li.comfirm.holiday 5
+        li(v-for="(date, i) in dates" :class="[date.isHoliday, date.type, date.isCurrentDate ? 'current' : '']")
+          | {{ date.number }}
     section.field
       .remarks
         ul
           li.apply 抽選申込期間
+          li.draw 抽選日
           li.comfirm 当選確認期間
       .options
         ol
@@ -62,7 +44,7 @@ section
               p
                 | 申込の確認や取消は
                 span.number
-                  | 4
+                  | {{ daysToDraw }}
                 | 日後まで可能です
             .button
               button
@@ -73,7 +55,7 @@ section
               p
                 | 抽選結果の確認は
                 span.number
-                  | 6
+                  | {{ daysToComfirm }}
                 | 日後から可能です
             .button
               button.disable
@@ -81,6 +63,50 @@ section
 </template>
 
 <script>
+import dayjs from 'dayjs'
+
+dayjs.locale({ weekStart: 1 })
+const d = dayjs()
+const startDate = d.startOf('week').add(-1, 'week')
+const calendarDates = (() => {
+  let n = 21
+  let array = []
+  while (n > 0) {
+    const date = startDate.add(n - 1, 'day')
+    const number = date.date()
+    const isHoliday = date.day() === 0 || date.day() === 6 ? 'holiday' : ''
+    let type = ''
+    if (number === 1) {
+      type = 'draw'
+    } else if (number > 1 && number <= 7) {
+      type = 'comfirm'
+    } else if (number >= 15) {
+      type = 'apply'
+    }
+    const isCurrentDate = number === d.date() ? 1 : 0
+    array = [
+      {
+        number: number,
+        isHoliday: isHoliday,
+        type: type,
+        isCurrentDate: isCurrentDate
+      }
+    ].concat(array)
+    n--
+  }
+  return array
+})()
+
+export default {
+  data() {
+    return {
+      month: d.month() + 1,
+      dates: calendarDates,
+      daysToDraw: d.endOf('month').date() - d.date(),
+      daysToComfirm: d.endOf('month').date() - d.date() + 2
+    }
+  }
+}
 </script>
 
 <style scoped lang="stylus">
@@ -150,6 +176,9 @@ time
 .current
   background url('~assets/images/CalendarEllipse.svg') no-repeat center center
   background-size 70%
+
+.draw
+  background-color sq-red
 
 .apply
   background-color calendar-apply
