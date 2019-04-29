@@ -24,5 +24,5 @@ export default {
   border 8px solid #000000
   background-color sq-blue
   background-image url('~assets/images/ObliqueLines.svg')
-  height 100vh
+  min-height 100vh
 </style>
