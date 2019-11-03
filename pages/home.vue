@@ -24,7 +24,7 @@ section
         ul
           li.apply 抽選申込期間
           li.draw 抽選日
-          li.comfirm 当選確認期間
+          li.comfirm 抽選結果確認期間
       .options
         ol
           li
@@ -48,6 +48,9 @@ section
                 | 日後まで可能です
             .button
               button
+                span.small
+                  | 抽選申込の
+                br
                 | 確認/取消
           li
             .chart.comfirm-option
@@ -248,6 +251,10 @@ button
   box-shadow 5px 6px #F0F6EF
   width 100px
   height 52px
+  line-height 100%
+
+  > span
+    font-size 75%
 
 .disable
   cursor not-allowed
